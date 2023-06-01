@@ -1,26 +1,19 @@
-#
+# Automatizar inserção de alunos em grupo no moodle.
 
 # Importação das bibliotecas
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
-import datetime
 import time
 import openpyxl as excel
-import urllib.parse
-import os
-import timeit
-import random
 
 #Inicia e salva os cookies
 options = webdriver.ChromeOptions()
-options.add_argument('--user-data-dir=./User_Data_MDI')
+#options.add_argument('--user-data-dir=./User_Data') # Necessário caso queira salvar os cookies do navegador
 driver = webdriver.Chrome(chrome_options=options)
-driver.get('https://ead.senaibahia.com.br/group/index.php?id=280')
+driver.get('https://ead.senaibahia.com.br/') # Abrir na aba de grupos do curso alvo no moodle
 
 input()
 time.sleep(2)
